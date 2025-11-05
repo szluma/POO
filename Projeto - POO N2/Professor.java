@@ -1,63 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Professor {
-    private int ID;
-    private String Nome;
+    private int id;
+    private String nome;
     private String CPF;
-    private String Area;
-    private String Turma;
+    private String area;
+    private List<Turma> turmas = new ArrayList<>();
 
-public Professor (int ID, String Nome, String CPF, String Area, String Turma){
-    this.ID = ID;
-    this.Nome = Nome;
-    this.CPF = CPF;
-    this.Area = Area;
-    this.Turma = Turma;
-}
+    public Professor(int id, String nome, String CPF, String area) {
+        this.id = id;
+        this.nome = nome;
+        this.CPF = CPF;
+        this.area = area;
+    }
 
-public int getID(){
-    return ID;
-}
+    public void cadastrar() {
+        System.out.println("Professor cadastrado: " + nome);
+    }
 
-public void setID(int ID){
-    this.ID = ID;
-}
+    public void atribuirTurma(Turma turma) {
+        turmas.add(turma);
+        System.out.println("Turma atribuída ao professor " + nome + ": " + turma.getNome());
+    }
 
-public String getNome(){
-    return Nome;
-}
-
-public void setNome(String Nome){
-    this.Nome = Nome;
-}
-
-public String getCPF(){
-    return CPF;
-}
-
-public void setCPF(String CPF){
-    this.CPF = CPF;
-}
-
-public String getArea(){
-    return Area;
-}
-
-public void setArea(String Area){
-    this.Area = Area;
-}
-
-public String getTurma(){
-    return Turma;
-}
-
-public void setTurma(String Turma){
-    this.Turma = Turma;
-}
-
-public void cadastrar(){
-    System.out.println("Cadastro do professor:" + Nome);
-}
-
-public void atribuirTurma(){
-    System.out.println("Turma atribuída ao professor:" + Nome);
-}
+    public String getNome() { return nome; }
 }
