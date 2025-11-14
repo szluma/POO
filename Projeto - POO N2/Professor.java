@@ -1,28 +1,19 @@
-import java.util.ArrayList;
-import java.util.List;
-
-public class Professor {
+public class Professor extends Pessoa {
     private int id;
-    private String nome;
-    private String CPF;
     private String area;
-    private List<Turma> turmas = new ArrayList<>();
 
-    public Professor(int id, String nome, String CPF, String area) {
+    public Professor(int id, String nome, String cpf, String dtNascimento, String area){
+        super(nome, cpf, dtNascimento);
         this.id = id;
-        this.nome = nome;
-        this.CPF = CPF;
         this.area = area;
     }
 
-    public void cadastrar() {
+    public void cadastrar(){
         System.out.println("Professor cadastrado: " + nome);
     }
 
-    public void atribuirTurma(Turma turma) {
-        turmas.add(turma);
-        System.out.println("Turma atribuída ao professor " + nome + ": " + turma.getNome());
+    @Override
+    public void visualizarDados(){
+        System.out.println("Professor: " + nome + " | ID: " + id + "| CPF: " + cpf + "| Área: " + area);
     }
-
-    public String getNome() { return nome; }
 }
